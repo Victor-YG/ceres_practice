@@ -17,7 +17,7 @@ add_executable(diffusion ./src/diffusion.cc)
 target_link_libraries(diffusion Ceres::ceres ${OpenCV_LIBS})
 
 # completion
-add_executable(completion ./completion.cc)
+add_executable(completion ./src/completion.cc)
 target_link_libraries(completion Ceres::ceres ${OpenCV_LIBS})
 
 # refinement

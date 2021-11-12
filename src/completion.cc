@@ -16,6 +16,7 @@
 #include "utils.h"
 #include "data_consistency.h"
 #include "spatial_smoothness.h"
+#include "photometric_consistency.h"
 
 
 // input variables
@@ -282,10 +283,7 @@ int main(int argc, char** argv)
     // create problem
     ceres::Problem problem;
     AddDataConsistencyTerms(&problem, solution, z_inv, width_d, height_d, roi);
-    
-    else
-        std::cout << "[INFO]: Photometric consistency term is not used." << std::endl;
-    
+
     if (CERES_GET_FLAG(FLAGS_lambda) != 0.0)
     {
         std::cout << "[INFO]: Using smoothness term." << std::endl;
